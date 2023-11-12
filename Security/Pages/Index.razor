@@ -1,0 +1,44 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>SQL Injection</h1>
+<h2>Please provide the full name of the individual for whom you would like to access additional information.</h2>
+
+
+<EditForm Model="@Model" OnSubmit="FindUser">
+    <label for="userId">User Id</label>
+    <input type="text" id="userId" name="userId" @bind="@Model.UserId"/>
+    <Switch TValue="bool" @bind-Checked="@Model.UseSqlInjection">Make SQL injection possible? If you turn this on, you can access all user information with "'0' OR 1=1"</Switch>
+    <button type="submit">Submit</button>
+</EditForm>
+
+@if (Users.Count > 0)
+{
+    <Table Bordered>
+        <TableHeader>
+            <TableRow>
+                <TableHeaderCell>Id</TableHeaderCell>
+                <TableHeaderCell>Full name</TableHeaderCell>
+                <TableHeaderCell>Username</TableHeaderCell>
+                <TableHeaderCell>Password</TableHeaderCell>
+            </TableRow>
+        </TableHeader>
+        <TableBody>
+            @foreach (var user in Users)
+            {
+                <TableRow>
+                    <TableRowHeader>@user.Id</TableRowHeader>
+                    <TableRowCell>@user.FullName</TableRowCell>
+                    <TableRowCell>@user.Username</TableRowCell>
+                    <TableRowCell>@user.Password</TableRowCell>
+                </TableRow>
+            }
+        </TableBody>
+    </Table>
+}
+
+<h1>Cross Site Request Forgery (CSRF)</h1>
+<h2>Please provide the full name of the individual you would like to send $100 to.</h2>
+<TextEdit @bind-Text="@Recipient"></TextEdit>
+<Button @onclick="RedirectToTransaction" Color="Color.Secondary">Send money!</Button>

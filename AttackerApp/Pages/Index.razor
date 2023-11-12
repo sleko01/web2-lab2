@@ -1,0 +1,15 @@
+﻿@page "/"
+
+<PageTitle>Attacking application</PageTitle>
+
+<h1>Welcome to the attacker's application!</h1>
+<h2>Press the button below. This is totally legit! :)</h2>
+<h2>Once the button is pressed, this application sends a GET request to the app</h2>
+
+<button @onclick="Attack">Attack the protected part of the app!</button>
+<br/>
+<br/>
+<button @onclick="AttackUnprotected">Attack the unprotected part of the app!</button>
+<br/>
+<br/>
+<h2>@_successMessage</h2>

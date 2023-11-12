@@ -1,0 +1,43 @@
+﻿@inherits LayoutComponentBase
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<PageTitle>Security</PageTitle>
+
+<div class="page">
+    @* <div class="sidebar"> *@
+    @*     <NavMenu /> *@
+    @* </div> *@
+
+    <main>
+        <Bar Breakpoint="Breakpoint.Desktop"
+             Background="Background.Light"
+             ThemeContrast="ThemeContrast.Light">
+            <BarToggler />
+            <BarMenu>
+                <BarStart>
+                    <BarItem>
+                        <BarLink To="/">Security</BarLink>
+                    </BarItem>
+                </BarStart>
+                <BarEnd>
+                    @if (!IsLoggedIn)
+                    {
+                        <BarItem>
+                            <Button onclick="window.location.href='login'" Color="Color.Secondary">Log in</Button>
+                        </BarItem>
+                    }
+                    else
+                    {
+                        <BarItem>
+                            <Button onclick="window.location.href='logout'" Color="Color.Secondary">Log out</Button>
+                        </BarItem>
+                    }
+                </BarEnd>
+            </BarMenu>
+        </Bar>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>

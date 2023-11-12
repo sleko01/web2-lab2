@@ -1,0 +1,8 @@
+@page "/transaction-unsafe"
+@model Security.Pages.TransactionUnsafeModel
+@{
+    @if (@Model.Sender != string.Empty)
+    {
+        <h1>@Model.Sender successfully sent payment to @Model.Recipient</h1>
+    }
+}

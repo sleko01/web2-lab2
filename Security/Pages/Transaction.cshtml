@@ -1,0 +1,8 @@
+@page "/transaction"
+@model Security.Pages.TransactionModel
+@{
+    @if (User.Identity.Name is not null)
+    {
+        <h1>@Model.sender successfully sent payment to @Model.recipient</h1>
+    }
+}
