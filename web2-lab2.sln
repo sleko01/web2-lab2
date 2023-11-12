@@ -1,8 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security", "Security\Security.csproj", "{1858A115-5661-448F-B5FF-7F8B88DBB70D}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Security", "Security\Security.csproj", "{1858A115-5661-448F-B5FF-7F8B88DBB70D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AF9345AD-8EF9-4EA9-BF48-D72ED3E3CD59} = {AF9345AD-8EF9-4EA9-BF48-D72ED3E3CD59}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttackerApp", "AttackerApp\AttackerApp.csproj", "{AF9345AD-8EF9-4EA9-BF48-D72ED3E3CD59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AttackerApp", "AttackerApp\AttackerApp.csproj", "{AF9345AD-8EF9-4EA9-BF48-D72ED3E3CD59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +24,8 @@ Global
 		{AF9345AD-8EF9-4EA9-BF48-D72ED3E3CD59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF9345AD-8EF9-4EA9-BF48-D72ED3E3CD59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF9345AD-8EF9-4EA9-BF48-D72ED3E3CD59}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
